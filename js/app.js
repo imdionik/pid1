@@ -411,7 +411,7 @@ XReader.js Version ${xreader.Environment.AppVersion}`, "font-family: monospace; 
 const referrerDomain = new URL(document.referrer).hostname; // Домен, з якого прийшов користувач
 
 if (referrerDomain && referrerDomain !== currentDomain) {
-  console.log("Користувач перейшов зі стороннього домену:", referrerDomain);
+  app.currentPageNumber=2;
 } else {
   console.log("Користувач зайшов безпосередньо або з того ж домену.");
 }
