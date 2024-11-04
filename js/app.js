@@ -407,7 +407,15 @@ XReader.js Version ${xreader.Environment.AppVersion}`, "font-family: monospace; 
 		this._currentPageNumber = value;
 		console.info("current page is now", this._currentPageNumber, this.currentPage);
 	
-			console.log(document.getElementById('ReaderPageOne>document'))
+		const currentDomain = window.location.hostname; // Поточний домен сайту
+const referrerDomain = new URL(document.referrer).hostname; // Домен, з якого прийшов користувач
+
+if (referrerDomain && referrerDomain !== currentDomain) {
+  console.log("Користувач перейшов зі стороннього домену:", referrerDomain);
+} else {
+  console.log("Користувач зайшов безпосередньо або з того ж домену.");
+}
+
 		
 		
 	},
